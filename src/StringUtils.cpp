@@ -3,12 +3,13 @@
 namespace StringUtils{
 
 std::string Slice(const std::string &str, ssize_t start, ssize_t end) noexcept{
+    
     ssize_t len = str.length();
 
-// To handle negative indices
+    // To handle negative indices
     if (start < 0) start += len;
     if (end <= 0) end += len;
-// Performs bounds checking
+    // Performs bounds checking
     if (start < 0) start = 0;
     if (end > len) end = len;
     if (start >= end) return "";
@@ -17,8 +18,15 @@ std::string Slice(const std::string &str, ssize_t start, ssize_t end) noexcept{
 }
 
 std::string Capitalize(const std::string &str) noexcept{
-    // Replace code here
-    return "";
+
+    // Gets the result of the string 
+    std::string result = str;
+    // Capitalizes first letter of the string using built in c++ function
+    result[0] = std::toupper(result[0]);
+    // Loops through the rest of the letters, making sure that they're lowercase, again using built in c++ function
+    for (size_t i = 1; i < result.length(); i++) {
+        result[i] = std::tolower(result[i]);
+    }
 }
 
 std::string Upper(const std::string &str) noexcept{
