@@ -30,13 +30,21 @@ std::string Capitalize(const std::string &str) noexcept{
 }
 
 std::string Upper(const std::string &str) noexcept{
-    // Replace code here
-    return "";
+
+    std::string result = str;
+
+    for(size_t i = 0; i < result.length(); i++) {
+        result[i] = std::toupper(result[i]);
+    }
 }
 
 std::string Lower(const std::string &str) noexcept{
-    // Replace code here
-    return "";
+
+    std::string result = str;
+
+    for(size_t i = 0; i < result.length(); i++) {
+        result[i] = std::tolower(result[i]);
+    }
 }
 
 std::string LStrip(const std::string &str) noexcept{
